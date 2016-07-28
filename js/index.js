@@ -92,10 +92,11 @@ $(function() {
       }
     }).done(function() {
       $(".alert.success").show()
-      window.location = "#form"
+      $('body').scrollTo("#form");
     }).fail(function() {
       $(".alert.error").show()
       window.location = "#form"
+      $('body').scrollTo("#form");
     })
 
     e.preventDefault()
