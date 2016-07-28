@@ -1,16 +1,18 @@
 <?php
+  $from_name = $_POST["name"];
   $from_email = $_POST["email"];
-
-  $headers = "Content-Type: text/html; charset=UTF-8";
-  $subject = $_POST["subject"];
   $message = $_POST["message"];
 
-  $success = mail($to, $subject, $message, $headers);
+  $headers = "Content-Type: text/html; charset=UTF-8";
+  $subject = "Запитване от ".$from_name;
+
+  $success = mail("pavelgdobrev@gmail.com", $subject, $message, $headers);
 
   if (!$success) {
-    return $success;
+    return header("Location: /?status=error#form");
+    exit();
   }
 
-  header("Location: /");
+  header("Location: /?status=success#form");
   exit();
 ?>

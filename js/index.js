@@ -17,8 +17,7 @@ $(function() {
   var slides = $(".slide")
   var currentSlideIndex = 0
   var previousSlideIndex = slides.length - 1
-
-  setInterval(function() {
+  var changeSlide = function() {
     $(slides[currentSlideIndex]).removeClass("shown").addClass("hidden")
 
     if (slides.length > 2) {
@@ -29,7 +28,12 @@ $(function() {
     currentSlideIndex = currentSlideIndex != slides.length - 1 ? currentSlideIndex + 1 : 0
 
     $(slides[currentSlideIndex]).removeClass("hidden").addClass("shown")
-  }, 2000)
+  }
+
+  setTimeout(function() {
+    changeSlide()
+    setInterval(changeSlide, 5000)
+  }, 3000)
 
   var openPhotoSwipe = function(index, items, disableAnimation, fromURL) {
     var pswpElement = document.querySelectorAll('.pswp')[0],
@@ -67,5 +71,34 @@ $(function() {
       openPhotoSwipe(index, heatingGallery)
       return false
     })
+  })
+
+  $("form").submit(function(e) {
+    var message = [
+      "Имате запитване от,",
+      $('[name="name"]').val() + " със електронн поща " + $('[name="email"]').val() + ".",
+      "",
+      "Съобщение:",
+      $('[name="message"]').val().split("\n").join("<br/>")
+    ].join("<br/>")
+
+    $.ajax({
+      url: "http://girginov18.com/send-email.php",
+      method: "POST",
+      data: {
+        name: $('[name="name"]').val(),
+        email: $('[name="email"]').val(),
+        message: message,
+      }
+    }).done(function() {
+      $(".alert.success").show()
+      window.location = "#form"
+    }).fail(function() {
+      $(".alert.error").show()
+      window.location = "#form"
+    })
+
+    e.preventDefault()
+    e.stopPropagation()
   })
 })

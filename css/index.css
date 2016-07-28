@@ -241,8 +241,6 @@ a.anchor {
 }
 
 
-
-
 @-webkit-keyframes hide-menu-content {
   0%   { margin-left: 0px; }
   100% { margin-left: -310px; }
@@ -282,11 +280,6 @@ a.anchor {
   99%   { visibility: visible; background-color: rgba(0, 0, 0, 0); }
   100% { visibility: hidden; background-color: rgba(0, 0, 0, 0); }
 }
-
-
-
-
-
 
 .mobile-menu .close-btn {
   float: right;
@@ -397,10 +390,10 @@ a.anchor {
 
 .slideshow .slides .slide.hidden {
   z-index: 2;
-  -webkit-animation: hide-slide forwards 0.5s;
-  -moz-animation:    hide-slide forwards 0.5s;
-  -o-animation:      hide-slide forwards 0.5s;
-  animation:         hide-slide forwards 0.5s;
+  -webkit-animation: hide-slide forwards 1.5s;
+  -moz-animation:    hide-slide forwards 1.5s;
+  -o-animation:      hide-slide forwards 1.5s;
+  animation:         hide-slide forwards 1.5s;
 }
 
 @-webkit-keyframes hide-slide {
@@ -572,6 +565,9 @@ header .bottom-part img {
   left: 30%;
 }
 
+.contacts .submit-btn {
+  cursor: pointer;
+}
 
 .about-us {
   background-color: #272727;
@@ -732,6 +728,29 @@ section .icon {
   width: 120px;
   height: 120px;
   margin: 5px;
+}
+
+.alert {
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.alert.shown {
+  display: block;
+}
+
+.alert.hidden {
+  display: none;
+}
+
+.alert.error {
+  background-color: #c30000;
+}
+
+.alert.success {
+  background-color: #007304;
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1350px) {
