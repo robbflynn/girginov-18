@@ -708,6 +708,32 @@ section .icon {
   height: 0;
 }
 
+.screenshots {
+  padding: 5px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8d8d8+0,f4f4f4+100 */
+  background: #d8d8d8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #d8d8d8 0%, #f4f4f4 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #d8d8d8 0%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #d8d8d8 0%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+}
+
+.screenshots {
+  font-size: 0;
+  border-bottom: 1px solid #e2e2e2;
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.screenshots .screenshot {
+  display: inline-block;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+}
+
 @media screen and (min-width: 1100px) and (max-width: 1350px) {
   .container {
     width: 960px;
@@ -803,6 +829,11 @@ section .icon {
   .menu .logo-pad .logo {
     width: 180px;
   }
+
+  .screenshots .screenshot {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -842,6 +873,11 @@ section .icon {
   .services .subsection-devider {
     height: 140px;
   }
+
+  .screenshots .screenshot {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 
@@ -855,7 +891,7 @@ section .icon {
     width: 50px;
     margin-top: -1px;
   }
-  
+
   .slideshow {
     width: 100%;
     bottom: 30px;
